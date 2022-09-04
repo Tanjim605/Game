@@ -4,6 +4,7 @@ using namespace std;
 
 
 vector<string> b(10," ");
+int turn=1,p,i;
 
 void print_board()
 {
@@ -33,7 +34,6 @@ void get_choice(int turn)
         get_choice(turn);
     }
         
-
     else if(b[c]==" ")
     {
         if(turn%2)
@@ -48,29 +48,31 @@ void get_choice(int turn)
     }
 }
 
+void play()
+{
+    for(i=1;i<10;i++)
+            b[i]=" ";
+    system("CLS");
+    turn=1;
+    print_board();
+    while(turn<=9)
+    {
+        cout<<endl<<"Give the position: ";
+        get_choice(turn);
+        system("CLS");
+        print_board();
+        cout<<endl;
+        //sleep(2);
+        turn++;
+    }
+}
+
 int main()
 {
-    int turn=1,p,i;
-    //print_board();
-
+    
     do
     {
-        for(i=1;i<10;i++)
-            b[i]=" ";
-        system("CLS");
-        turn=1;
-        print_board();
-        while(turn<=9)
-        {
-            cout<<endl<<"Give the position: ";
-            get_choice(turn);
-            system("CLS");
-            print_board();
-            cout<<endl;
-            //sleep(2);
-            turn++;
-        }
-        
+        play();
         cout<<"If you want to play again press 1;\neither press 0";
         cin>>p;
     }
