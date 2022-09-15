@@ -4,7 +4,7 @@ using namespace std;
 
 
 vector<string> b(10," ");
-int turn=1,p,i;
+int turn=1,p,i,c;
 
 void print_board()
 {
@@ -27,7 +27,6 @@ void print_board()
 
 void get_choice(int turn)
 {
-    int c;
     cin>>c;
     if(c>9 || c<1){
         cout<<"Enter a value between 1 to 9\n";
@@ -48,6 +47,84 @@ void get_choice(int turn)
     }
 }
 
+void is_win()
+{
+    switch (c)
+    {
+    case 1:
+        if((b[1]==b[2]&&b[2]==b[3])||(b[1]==b[4]&&b[4]==b[7])||(b[1]==b[5]&&b[5]==b[9]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+    
+    case 2:
+        if((b[1]==b[2]&&b[2]==b[3])||(b[2]==b[5]&&b[5]==b[8]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+
+    case 3:
+        if((b[1]==b[2]&&b[2]==b[3])||(b[3]==b[6]&&b[6]==b[9])||(b[3]==b[5]&&b[5]==b[7]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+
+    case 4:
+        if((b[4]==b[5]&&b[5]==b[6])||(b[1]==b[4]&&b[4]==b[7]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+
+    case 5:
+        if((b[1]==b[5]&&b[5]==b[9])||(b[4]==b[5]&&b[5]==b[6])||(b[2]==b[5]&&b[5]==b[8])||(b[3]==b[5]&&b[5]==b[7]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+
+    case 6:
+        if((b[4]==b[5]&&b[5]==b[6])||(b[3]==b[6]&&b[6]==b[9]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+
+    case 7:
+        if((b[7]==b[8]&&b[8]==b[9])||(b[1]==b[4]&&b[4]==b[7])||(b[3]==b[5]&&b[5]==b[7]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+
+    case 8:
+        if((b[7]==b[8]&&b[8]==b[9])||(b[8]==b[5]&&b[5]==b[2]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+
+    case 9:
+        if((b[7]==b[8]&&b[8]==b[9])||(b[1]==b[5]&&b[5]==b[9])||(b[9]==b[6]&&b[6]==b[3]))
+        {
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            turn=9;
+        }
+        break;
+    }
+}
+
 void play()
 {
     for(i=1;i<10;i++)
@@ -61,24 +138,28 @@ void play()
         get_choice(turn);
         system("CLS");
         print_board();
+        if(turn>4)      //we get winner only after 5 moves
+        {
+            is_win();
+        }
         cout<<endl;
-        //sleep(2);
         turn++;
     }
 }
 
+
+
 int main()
 {
-    
     do
     {
         play();
-        cout<<"If you want to play again press 1;\neither press 0";
+        cout<<"If you want to play again press 1;\neither press 0\n\n";
         cin>>p;
     }
     while(p);
     
     cout<<"Thanks for playing\n";
-    sleep(3);
+    sleep(3);       //waits 3 seconds
     return 0;
 }
