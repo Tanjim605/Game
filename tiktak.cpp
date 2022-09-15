@@ -134,7 +134,7 @@ void play()
     print_board();
     while(turn<=9)
     {
-        cout<<endl<<"Give the position: ";
+        cout<<endl<<"\nGive the position: ";
         get_choice(turn);
         system("CLS");
         print_board();
