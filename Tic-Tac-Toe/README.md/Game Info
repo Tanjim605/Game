@@ -1,0 +1,15 @@
+This is tic-tac-toe game. Created by me. Just to know about header file use.
+ 
+ You can play it by just giving position number.
+ 
+            1 2 3
+            4 5 6
+            7 8 9
+            
+              This is the position sequence.
+ 1st player will give x
+ 2nd player will give o
+ 
+ Thanks for reading.
+    
+    Happy coding.
