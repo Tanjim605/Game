@@ -11,6 +11,7 @@ main()
     }
     while(p);
     
+    system("CLS");
     cout<<"Thanks for playing\n";
     sleep(3);       //waits 3 seconds
     return 0;
