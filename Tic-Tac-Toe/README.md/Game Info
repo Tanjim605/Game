@@ -1,4 +1,11 @@
 This is tic-tac-toe game. Created by me. Just to know about header file use.
+
+Playing board will look like this below
+            |  |
+          --------
+            |  |
+          --------
+            |  |
  
  You can play it by just giving position number.
  
