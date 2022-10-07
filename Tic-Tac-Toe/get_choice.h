@@ -1,5 +1,3 @@
-#include"variable.h"
-
 void get_choice(int turn)
 {
     cin>>c;

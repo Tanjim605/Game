@@ -1,77 +1,71 @@
 void is_win()
 {
-    switch (c)
+    int cnt=0;
+
+    //Horizontal check
+    if(c==1||c==2||c==3)
+        i=1;
+    else if(c==4||c==5||c==6)
+        i=4;
+    else if(c==7||c==8||c==9)
+        i=7;
+
+    if(board[i]!=" ")
     {
-    case 1:
-        if((board[1]==board[2]&&board[2]==board[3])||(board[1]==board[4]&&board[4]==board[7])||(board[1]==board[5]&&board[5]==board[9]))
+        if(board[i]==board[i+1] && board[i]==board[i+2])
         {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner";
             turn=9;
+            return;
         }
-        break;
-    
-    case 2:
-        if((board[1]==board[2]&&board[2]==board[3])||(board[2]==board[5]&&board[5]==board[8]))
-        {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
-            turn=9;
-        }
-        break;
+    }
 
-    case 3:
-        if((board[1]==board[2]&&board[2]==board[3])||(board[3]==board[6]&&board[6]==board[9])||(board[3]==board[5]&&board[5]==board[7]))
-        {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
-            turn=9;
-        }
-        break;
+    //Vertical check
+    if(c==1||c==4||c==7)
+        i=1;
+    else if(c==2||c==5||c==8)
+        i=2;
+    else if(c==3||c==6||c==9)
+        i=3;
+    cnt=0;
 
-    case 4:
-        if((board[4]==board[5]&&board[5]==board[6])||(board[1]==board[4]&&board[4]==board[7]))
+    if(board[i]!=" ")
+    {
+        if(board[i]==board[i+3] && board[i]==board[i+6])
         {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
+            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner";
             turn=9;
+            return;
         }
-        break;
+    }
 
-    case 5:
-        if((board[1]==board[5]&&board[5]==board[9])||(board[4]==board[5]&&board[5]==board[6])||(board[2]==board[5]&&board[5]==board[8])||(board[3]==board[5]&&board[5]==board[7]))
+    //1st Diagonal check
+    if(c==1||c==5||c==9)
+    {
+        i=1;
+        if(board[i]!=" ")
         {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
-            turn=9;
+            if(board[i]==board[5] && board[i]==board[9])
+            {
+                cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner";
+                turn=9;
+                return;
+            }
         }
-        break;
+    }
 
-    case 6:
-        if((board[4]==board[5]&&board[5]==board[6])||(board[3]==board[6]&&board[6]==board[9]))
+    //2nd Diagonal check
+    if(c==3||c==5||c==7)
+    {
+        i=3;
+        if(board[i]!=" ")
         {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
-            turn=9;
+            if(board[i]==board[5] && board[i]==board[7])
+            {
+                cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner";
+                turn=9;
+                return;
+            }
         }
-        break;
-
-    case 7:
-        if((board[7]==board[8]&&board[8]==board[9])||(board[1]==board[4]&&board[4]==board[7])||(board[3]==board[5]&&board[5]==board[7]))
-        {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
-            turn=9;
-        }
-        break;
-
-    case 8:
-        if((board[7]==board[8]&&board[8]==board[9])||(board[8]==board[5]&&board[5]==board[2]))
-        {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
-            turn=9;
-        }
-        break;
-
-    case 9:
-        if((board[7]==board[8]&&board[8]==board[9])||(board[1]==board[5]&&board[5]==board[9])||(board[9]==board[6]&&board[6]==board[3]))
-        {
-            cout<<"\n\nplayer "<<(!(turn%2)+1)<<" is the winner"<<endl;
-            turn=9;
-        }
-        break;
     }
 }

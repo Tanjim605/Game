@@ -1,5 +1,3 @@
-using namespace std;
-
 void print_board()
 {
     for(int i=1;i<=9;i++)
