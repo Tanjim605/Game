@@ -2,9 +2,12 @@
 #include "get_choice.h"
 #include "win.h"
 #include "board.h"
+#include "option_choose.h"
 
 void play()
 {
+    system("CLS");
+    option_choose();
     for(i=1;i<10;i++)
             board[i]=" ";
     system("CLS");
