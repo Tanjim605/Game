@@ -9,9 +9,9 @@ void get_choice(int turn)
     else if(board[c]==" ")
     {
         if(turn%2)
-            board[c]="x";
+            board[c]=FUO;
         else
-            board[c]="o";
+            board[c]=SUO;
     }
     else
     {
